@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="data-item">
+    <div class="avatarImage">
+      <img [src]="job.logo" class="avatar" alt="avatar" />
+    </div>
+    <div>
+      <div class="superiroPosition">
+        <span class="companyName">{{ job.company }}</span>
+        <span class="new" *ngIf="job.new">NEW!</span>
+        <span class="featured" *ngIf="job.featured">FEATURED</span>
+      </div>
+      <div class="positionDiv">
+        <span class="position">{{ job.position }}</span>
+      </div>
+      <div class="inormationEx">
+        <span class="postedAt">{{ job.postedAt }}</span>
+        <span class="separator">.</span>
+        <span class="contract">{{ job.contract }}</span>
+        <span class="separator">.</span>
+        <span class="location">{{ job.location }}</span>
+      </div>
+      <div class="divider">
+    </div>
+  </div>
+  </div>
+
+  <div class="data-item">
+    <div class="filterInformation">
+      <div class="role">
+        <span class="roleName" (click)="filterAction(job.role)">{{
+          job.role
+        }}</span>
+      </div>
+      <div class="level">
+        <span class="levelName" (click)="filterAction(job.level)">{{
+          job.level
+        }}</span>
+      </div>
+      <div class="languages">
+        <span
+          class="languageName"
+          *ngFor="let item of job.languages"
+          (click)="filterAction(item)"
+          >{{ item }}</span
+        >
+      </div>
+      <div class="tools">
+        <span
+          class="toolName"
+          *ngFor="let item of job.tools"
+          (click)="filterAction(item)"
+          >{{ item }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

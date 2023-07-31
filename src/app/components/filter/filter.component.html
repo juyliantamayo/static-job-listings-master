@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="filters">
+    <div class="filter" *ngFor="let item of filters">
+      <span class="filter-name">{{item}}</span>
+      <span class="filter-remove" (click)="removeFilterAction(item)">X</span>
+    </div>
+  </div>
+  <div class="clear">
+    <button class="clear-btn" (click)="clearFilterAction()">Clear</button>
+  </div>
+</div>
+<div class="divider"></div>

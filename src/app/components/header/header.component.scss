@@ -1,0 +1,24 @@
+@media  (orientation: landscape) {
+  header{
+    background-image: url('/assets/images/bg-header-desktop.svg');
+    width: 100%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #5da5a4;
+
+  }
+}
+@media  (orientation: portrait) {
+  header{
+    background-image: url('/assets/images/bg-header-mobile.svg');
+    width: 100%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #5da5a4;
+
+  }
+}
+
+
