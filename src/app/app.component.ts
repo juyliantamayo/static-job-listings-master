@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   data: any[] = [];
-  allData:any[] =[];
+  allData: any[] = [];
   filter: any[] = [];
   isFiltering: boolean = false;
   constructor(private jsonService: JsonDataService) {}
@@ -42,14 +42,14 @@ export class AppComponent implements OnInit {
   }
   filterData() {
     this.data = this.allData.filter((item) => {
-      return (
-        this.filter.includes(item.role) ||
-        this.filter.includes(item.level) ||
-        item.languages.some((language: any) =>
-          this.filter.includes(language)
-        ) ||
-        item.tools.some((tool: any) => this.filter.includes(tool))
-      );
+      return this.filter.every((filter) => {
+        return (
+          item.role === filter ||
+          item.level === filter ||
+          item.languages.includes(filter) ||
+          item.tools.includes(filter)
+        );
+      });
     });
   }
 }
